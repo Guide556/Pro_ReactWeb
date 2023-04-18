@@ -1,0 +1,67 @@
+import React from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
+
+function Cart() {
+  return (
+    <>
+      <section id="contact" className="contact">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <div className="row">
+              <Row>
+                <Col sm={8}>
+                  <div
+                    style={{ justifyContent: "center", alignItems: "center" }}
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/102/102661.png"
+                      height={200}
+                      width={200}
+                      alt="Empty"
+                    />
+                  </div>
+                </Col>
+
+                <Col sm={4} style={{ marginTop: 50 }}>
+                  <Card>
+                    <Card.Header
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        justifyContent: "flex-start",
+                      }}
+                    >
+                      Cart
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Title
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          justifyContent: "flex-start",
+                        }}
+                      >
+                        Total : 0 Bath
+                      </Card.Title>
+
+                      <Button variant="success" style={{ marginTop: 20, width:150 }} >
+                        Buy
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+              </Row>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default Cart;
