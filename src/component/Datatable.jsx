@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { OrderData } from "../data/Data";
 import "./Datatable.css";
+import { NavLink } from "react-router-dom";
 
 const PrintButton = ({ tableRef, setPrinting }) => {
   const handlePrint = () => {
@@ -57,7 +58,7 @@ const DataTable = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [printing, setPrinting] = useState(false);
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const tableRef = useRef();
 
   useEffect(() => {
@@ -111,11 +112,7 @@ const DataTable = () => {
   const paginationButtons = [];
   for (let i = 1; i <= totalPages; i++) {
     paginationButtons.push(
-      <button
-        key={i}
-        onClick={() => goToPage(i)}
-        disabled={currentPage === i}
-      >
+      <button key={i} onClick={() => goToPage(i)} disabled={currentPage === i}>
         {i}
       </button>
     );
@@ -126,30 +123,68 @@ const DataTable = () => {
       <td>{item.id}</td>
       <td>{item.name}</td>
       <td>{item.date}</td>
+      <td>{item.total}</td>
       <td>{item.status}</td>
-      {!printing && (
-        <td>
-          <button onClick={() => editItem(item.id)}>Edit</button>
-          <button onClick={() => deleteItem(item.id)}>Delete</button>
-        </td>
-      )}
+
+      <td>
+        <NavLink to="/EditOder" state={{ id: item.id, data: OrderData }}>
+          <button onClick={() => editItem(item.id)} style={{ marginRight: 5 }}>
+            Edit
+          </button>
+        </NavLink>
+        <button onClick={() => deleteItem(item.id)}>Delete</button>
+      </td>
     </tr>
   ));
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const filteredData = OrderData.filter((item) =>
+      item.name.toLowerCase().includes(searchQuery) || 
+      item.id.toString().includes(searchQuery) || 
+      item.date.toString().includes(searchQuery) || 
+      item.total.toString().includes(searchQuery) || 
+      item.status.toLowerCase().includes(searchQuery) 
+    );
+    setData(filteredData);
+  }, [searchQuery]);
+
   return (
     <div>
+      <div className="Section1">
+        <div className="PrintGroup">
+
+          <PrintButton tableRef={tableRef} setPrinting={setPrinting}/>
+
+          <button onClick={exportToCSV} className="export-button" style={{marginLeft: 5}}>
+            Export to Excel
+          </button>
+        </div>
+
+        <input
+          className="DataSearch"
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search..."
+        />
+      </div>
+
       <table className="datatable" ref={tableRef}>
         <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Date</th>
+            <th>Total</th>
             <th>Status</th>
-            {!printing && <th>Action</th>}
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>{tableRows}</tbody>
       </table>
+
       <div className="pagination-container">
         <button
           onClick={previousPage}
@@ -159,6 +194,7 @@ const DataTable = () => {
           Previous
         </button>
         {paginationButtons}
+
         <button
           onClick={nextPage}
           disabled={currentPage === totalPages}
@@ -168,11 +204,9 @@ const DataTable = () => {
         </button>
       </div>
 
-      <PrintButton tableRef={tableRef} setPrinting={setPrinting} />
-
-      <button onClick={exportToCSV} className="export-button">
-        Export to Excel
-      </button>
+      {/* <button onClick={exportToPDF} className="export-button">
+        Export to PDF
+      </button> */}
     </div>
   );
 };

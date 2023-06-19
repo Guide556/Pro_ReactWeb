@@ -6,7 +6,7 @@ import { PrivateRoute } from "./route/PrivateRoute";
 
 function App() {
   let accessType = 1;
-  return accessType === 1 ? (
+  return accessType === 0 ? (
     <Main>
       <link href="assets/img/favicon.png" rel="icon" />
       <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />

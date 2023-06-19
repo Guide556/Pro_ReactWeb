@@ -3,6 +3,7 @@ import CreateProduct from "../private-pages/main/CreateProduct";
 import AllProducts from "../private-pages/main/AllProducts";
 import EditPage from "../private-pages/main/EditPage";
 import OrderPage from "../private-pages/main/OrderPage";
+import EditOrder from "../private-pages/main/EditOrder";
 
 export const PrivateRoute = [
     {
@@ -26,9 +27,14 @@ export const PrivateRoute = [
         element: <EditPage />
     },
     {
-        id: "",
+        id: "4",
         path: "/OrderPage",
         element: <OrderPage />
+    },
+    {
+        id: "5",
+        path: "/EditOder",
+        element: <EditOrder />
     },
 
 
