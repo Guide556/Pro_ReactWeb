@@ -16,24 +16,28 @@ export const SideBar = () => {
                 <p>Dashboard</p>
               </NavLink>
             </li>
+            
             <li>
               <NavLink to="/All_Products">
                 <i className="fa fa-book" aria-hidden="true"></i>
                 <p>All Product</p>
               </NavLink>
             </li>
-            <li>
+            
+            {/* <li>
               <NavLink to="/CreateProduct">
                 <i className="fa fa-pencil" aria-hidden="true"></i>
                 <p>Create Product</p>
               </NavLink>
-            </li>
+            </li> */}
+
             <li>
               <NavLink to="/OrderPage">
                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
                 <p>Order</p>
               </NavLink>
             </li>
+
           </ul>
         </div>
       </div>

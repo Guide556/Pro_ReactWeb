@@ -608,7 +608,7 @@ section {
 --------------------------------------------------------------*/
 .about h3 {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 28px;text-align: center;
   margin-bottom: 20px;
   font-family: var(--font-secondary);
 }
@@ -2666,4 +2666,10 @@ section {
 
 .footer .credits a {
   color: #fff;
+}
+
+ 
+.activeItem:hover {
+  position: relative;
+  bottom: 2px;
 }

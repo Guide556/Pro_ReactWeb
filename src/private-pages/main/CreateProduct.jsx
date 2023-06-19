@@ -5,6 +5,7 @@ import { ValidateFormContact } from "../../screen/validate_form/ValidateContact"
 import "../components/style.css";
 
 import Select from 'react-select';
+import { NavLink } from "react-router-dom";
 
 const options = [
   { value: 'paperback', label: 'Paperback' },
@@ -29,7 +30,7 @@ export default function CreateProduct() {
             initialValues={{
               Name: "",
               Price: "",
-              Description: ""
+              Description: "",
             }}
             validationSchema={ValidateFormContact}
             onSubmit={(values) => {
@@ -135,17 +136,16 @@ export default function CreateProduct() {
                       />
                     </div>
 
-                    <div className="form-group col-md-6">                  
-                        <label htmlFor="name">Book Format</label>   
-                        <Select
-                          defaultValue={selectedOption}
-                          onChange={setSelectedOption}
-                          options={options}                         
-                        />    
-                      </div>
+                    <div className="form-group col-md-6">
+                      <label htmlFor="name">Book Format</label>
+                      <Select
+                        defaultValue={selectedOption}
+                        onChange={setSelectedOption}
+                        options={options}
+                      />
                     </div>
                   </div>
-               
+                </div>
 
                 <div className="text-center" style={{ marginTop: 20 }}>
                   <button
@@ -155,13 +155,25 @@ export default function CreateProduct() {
                   >
                     Create
                   </button>
+
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-warning"
                     type="reset"
                     style={{ fontSize: 18, margin: 15 }}
                   >
                     Reset
                   </button>
+
+                  <NavLink to="/All_Products">
+                    <button
+                      className="btn btn-danger"
+                      style={{ fontSize: 18, margin: 15 }}
+                    >
+                     Cancel
+                    </button>
+                  </NavLink>
+
+
                 </div>
               </Form>
             )}

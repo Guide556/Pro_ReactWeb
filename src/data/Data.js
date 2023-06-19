@@ -34,7 +34,7 @@ export const Data = [
   {
     id: 5,
     image:
-      "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/81K7taBQxiL.jpg",
+      "https://m.media-amazon.com/images/I/81K7taBQxiL._AC_UF1000,1000_QL80_.jpg",
     name: "Yu-Gi-Oh 1",
     title: "",
     price: 95,
@@ -63,3 +63,134 @@ export const Data = [
     price: 95,
   },
 ];
+
+export const CartData = [
+  {
+    id: 1,
+    image: "https://m.media-amazon.com/images/I/81gs7bNAyvL._AC_UF1000,1000_QL80_.jpg",
+    name: "oshi no ko vol.1",
+    price: 485,
+    quantity: 1,
+    amount: 1,
+    alt: 1
+  },
+  {
+    id: 2,
+    image: "https://m.media-amazon.com/images/I/81qZ5D4PA3L._AC_UF1000,1000_QL80_.jpg",
+    name: "oshi no ko vol.2",
+    price: 485,
+    quantity: 1,
+    amount: 1,
+    alt: 2
+  },
+];
+
+
+export const OrderData = [
+  {
+    id: 1,
+    name: "Suphachai Saechi",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+  {
+    id: 1,
+    name: "Suphachai",
+    date: "16/08/2566",
+    total: 220,
+    status: "Approve"
+  },
+]
+

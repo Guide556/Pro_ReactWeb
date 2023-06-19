@@ -55,7 +55,7 @@ export default function Login() {
                     className="row"
                     style={{ alignItems: "center", justifyContent: "center" }}
                   >
-                    <div className="col-md-6">
+                    <div className="col-6">
                       <div className="form-group" style={{ marginBottom: 10 }}>
                         <label htmlFor="name" style={{ marginBottom: 10 }}>
                           Email

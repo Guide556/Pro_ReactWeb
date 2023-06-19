@@ -5,6 +5,7 @@ import Register from "../screen/Register"
 import Cart from "../screen/Cart"
 import Product from "../component/Product"
 import Books from "../screen/Books"
+import Checkout from "../screen/Checkout"
 
  export const PublicRoute = [
     {
@@ -41,5 +42,10 @@ import Books from "../screen/Books"
         id: "6",
         path: "/Books",
         element: <Books/>
+    },
+    {
+        id: "7",
+        path: "/Checkout",
+        element: <Checkout/>
     },
  ];
